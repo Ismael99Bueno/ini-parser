@@ -1,4 +1,4 @@
-project "ini"
+project "ini-parser"
    kind "StaticLib"
 
    language "C++"
