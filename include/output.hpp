@@ -10,7 +10,6 @@ namespace ini
     class output : public section_builder
     {
     public:
-        output() = delete;
         output(const char *filepath);
         ~output();
 
@@ -34,6 +33,8 @@ namespace ini
     private:
         std::ofstream m_stream;
         bool m_reiterate_last_section = false;
+
+        output() = delete;
     };
 }
 

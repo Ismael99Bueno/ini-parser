@@ -13,7 +13,6 @@ namespace ini
     class input : public ini::section_builder
     {
     public:
-        input() = delete;
         input(const char *filepath);
         ~input();
 
@@ -45,6 +44,7 @@ namespace ini
         std::unordered_map<std::string, std::string> m_kv_pairs;
 
         void parse_ini();
+        input() = delete;
     };
 }
 
