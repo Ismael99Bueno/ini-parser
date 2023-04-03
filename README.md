@@ -11,7 +11,7 @@ ini-parser is a simple C++ library that enables users to read and write INI file
 
 ## Dependencies
 
-- [debug-tools](https://github.com/Ismael99Bueno/debug-tools): a set of tools for debugging the profiler
+- [debug-tools](https://github.com/Ismael99Bueno/debug-tools): A set of tools for debugging the parser
 
 ## Usage
 
