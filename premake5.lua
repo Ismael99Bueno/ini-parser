@@ -3,7 +3,7 @@ project "ini-parser"
 
    language "C++"
    cppdialect "C++17"
-   staticruntime "on"
+   
 
    targetdir("bin/" .. outputdir)
    objdir("build/" .. outputdir)
