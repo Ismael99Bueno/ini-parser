@@ -17,11 +17,16 @@ namespace ini
         ~input();
 
         const std::string &readstr(const std::string &key) const;
-        float readf(const std::string &key) const;
-        std::int64_t readi(const std::string &key) const;
+        float readf32(const std::string &key) const;
+        double readf64(const std::string &key) const;
+        long double readf128(const std::string &key) const;
 
-        template <typename T>
-        T read(const std::string &key, std::function<T(const char *)> parser) const { return parser(readstr(key).c_str()); }
+        std::int16_t readi16(const std::string &key) const;
+        std::int32_t readi32(const std::string &key) const;
+        std::int64_t readi64(const std::string &key) const;
+
+        std::uint32_t readui32(const std::string &key) const;
+        std::uint64_t readui64(const std::string &key) const;
 
         void close();
         bool contains_key(const std::string &key) const;

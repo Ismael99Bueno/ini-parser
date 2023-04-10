@@ -1,4 +1,5 @@
 #include "input.hpp"
+#include <string>
 
 namespace ini
 {
@@ -21,8 +22,16 @@ namespace ini
         return m_kv_pairs.at(sec_key);
     }
 
-    float input::readf(const std::string &key) const { return read<float>(key, std::atof); }
-    std::int64_t input::readi(const std::string &key) const { return read<std::int64_t>(key, std::atoll); }
+    float input::readf32(const std::string &key) const { return std::stof(readstr(key)); }
+    double input::readf64(const std::string &key) const { return std::stod(readstr(key)); }
+    long double input::readf128(const std::string &key) const { return std::stold(readstr(key)); }
+
+    std::int16_t input::readi16(const std::string &key) const { return (std::int16_t)std::stoi(readstr(key)); }
+    std::int32_t input::readi32(const std::string &key) const { return (std::int32_t)std::stol(readstr(key)); }
+    std::int64_t input::readi64(const std::string &key) const { return std::stoll(readstr(key)); }
+
+    std::uint32_t input::readui32(const std::string &key) const { return (std::uint32_t)std::stoul(readstr(key)); }
+    std::uint64_t input::readui64(const std::string &key) const { return std::stoull(readstr(key)); }
 
     void input::close()
     {
