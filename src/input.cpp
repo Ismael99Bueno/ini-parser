@@ -54,7 +54,7 @@ namespace ini
 
         while (m_stream)
         {
-            const char c = m_stream.get();
+            const char c = (char)m_stream.get();
             switch (state)
             {
             case READY:
