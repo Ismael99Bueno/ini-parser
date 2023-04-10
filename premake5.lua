@@ -1,5 +1,6 @@
 project "ini-parser"
    kind "StaticLib"
+   staticruntime "off"
 
    language "C++"
    cppdialect "C++17"
