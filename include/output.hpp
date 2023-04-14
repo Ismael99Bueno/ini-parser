@@ -33,8 +33,6 @@ namespace ini
     private:
         std::ofstream m_stream;
         bool m_reiterate_last_section = false;
-
-        output() = delete;
     };
 }
 
