@@ -2,6 +2,8 @@
 #define OUTPUT_HPP
 
 #include <fstream>
+#include <iomanip>
+#include <limits>
 #include "section_builder.hpp"
 #include "debug.hpp"
 
@@ -24,7 +26,7 @@ namespace ini
                 m_stream << "\n[" << m_current_section << "]\n";
                 m_reiterate_last_section = false;
             }
-            m_stream << key << "=" << value << "\n";
+            m_stream << key << "=" << std::setprecision(std::numeric_limits<T>::max_digits10) << value << "\n";
         }
 
         void end_section() override;
