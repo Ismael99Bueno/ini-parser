@@ -1,5 +1,6 @@
 #include "input.hpp"
 #include <string>
+#include <iostream>
 
 namespace ini
 {
@@ -18,7 +19,7 @@ namespace ini
     {
         DBG_ASSERT(!m_current_section.empty(), "A section must be started before reading!\n")
         const std::string sec_key = build_key(key);
-        DBG_ASSERT(m_kv_pairs.find(sec_key) != m_kv_pairs.end(), "Key %s not found in section %s!\n", key.c_str(), m_current_section.c_str())
+        DBG_ASSERT(m_kv_pairs.find(sec_key) != m_kv_pairs.end(), "Key '%s' not found in section '%s'!\n", key.c_str(), m_current_section.c_str())
         return m_kv_pairs.at(sec_key);
     }
 
@@ -35,7 +36,7 @@ namespace ini
 
     void input::close()
     {
-        DBG_ASSERT(m_current_section.empty(), "A section is still open: %s\n", m_current_section.c_str())
+        DBG_ASSERT(m_current_section.empty(), "A section is still open: '%s'\n", m_current_section.c_str())
         m_stream.close();
     }
 
@@ -55,6 +56,8 @@ namespace ini
         while (m_stream)
         {
             const char c = (char)m_stream.get();
+            if (c == '\r')
+                continue;
             switch (state)
             {
             case READY:
