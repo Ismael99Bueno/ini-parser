@@ -5,8 +5,8 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <functional>
-#include "section_builder.hpp"
-#include "debug.hpp"
+#include "ini/section_builder.hpp"
+#include "debug/debug.hpp"
 
 namespace ini
 {

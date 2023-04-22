@@ -4,8 +4,8 @@
 #include <fstream>
 #include <iomanip>
 #include <limits>
-#include "section_builder.hpp"
-#include "debug.hpp"
+#include "ini/section_builder.hpp"
+#include "debug/debug.hpp"
 
 namespace ini
 {

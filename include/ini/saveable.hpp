@@ -1,8 +1,8 @@
 #ifndef SAVEABLE_HPP
 #define SAVEABLE_HPP
 
-#include "input.hpp"
-#include "output.hpp"
+#include "ini/input.hpp"
+#include "ini/output.hpp"
 
 namespace ini
 {
