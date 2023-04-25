@@ -5,7 +5,7 @@ namespace ini
 {
     void section_builder::begin_section(const std::string &section)
     {
-        m_sections.emplace_back(section);
+        m_sections.push_back(section);
         m_current_section = build_section_key();
     }
 
