@@ -8,7 +8,7 @@ project "ini-parser"
       buildoptions {"-Wall", "-Wextra", "-Wpedantic", "-Wconversion", "-Wno-unused-parameter"}
    filter{}
    
-   pchheader "include/ini/pch.hpp"
+   pchheader "ini/pch.hpp"
    pchsource "src/pch.cpp"
 
    targetdir("bin/" .. outputdir)
