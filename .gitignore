@@ -10,6 +10,10 @@
 # MacOS artifacts
 .DS_Store
 
+#Precompiled headers
+*.pch
+*.gch
+
 # VS-VSCode config
 .vscode/
 .vs/

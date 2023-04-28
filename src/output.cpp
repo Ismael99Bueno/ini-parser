@@ -1,3 +1,4 @@
+#include "ini/pch.hpp"
 #include "ini/output.hpp"
 
 namespace ini
