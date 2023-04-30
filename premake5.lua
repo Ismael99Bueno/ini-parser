@@ -1,18 +1,27 @@
 project "ini-parser"
-   staticruntime "off"
-   kind "StaticLib"
+staticruntime "off"
+kind "StaticLib"
 
-   language "C++"
-   cppdialect "C++17"
-   filter "system:macosx"
-      buildoptions {"-Wall", "-Wextra", "-Wpedantic", "-Wconversion", "-Wno-unused-parameter"}
-   filter{}
-   
-   pchheader "ini/pch.hpp"
-   pchsource "src/pch.cpp"
+language "C++"
+cppdialect "C++17"
+filter "system:macosx"
+buildoptions {
+   "-Wall",
+   "-Wextra",
+   "-Wpedantic",
+   "-Wconversion",
+   "-Wno-unused-parameter"
+}
+filter {}
 
-   targetdir("bin/" .. outputdir)
-   objdir("build/" .. outputdir)
+pchheader "ini/pch.hpp"
+pchsource "src/pch.cpp"
 
-   files {"src/**.cpp", "include/**.hpp"}
-   includedirs "../**/include"
+targetdir("bin/" .. outputdir)
+objdir("build/" .. outputdir)
+
+files {
+   "src/**.cpp",
+   "include/**.hpp"
+}
+includedirs "../**/include"
