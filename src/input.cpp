@@ -22,7 +22,17 @@ namespace ini
         return m_kv_pairs.at(sec_key);
     }
 
-    float input::readf32(const std::string &key) const { return std::stof(readstr(key)); }
+    float input::readf32(const std::string &key) const
+    {
+        try
+        {
+            return std::stof(readstr(key));
+        }
+        catch (const std::out_of_range &e)
+        {
+            return (float)std::stod(readstr(key));
+        }
+    }
     double input::readf64(const std::string &key) const { return std::stod(readstr(key)); }
     long double input::readf128(const std::string &key) const { return std::stold(readstr(key)); }
 
