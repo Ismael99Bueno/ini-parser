@@ -1,5 +1,5 @@
-#ifndef INPUT_HPP
-#define INPUT_HPP
+#ifndef DESERIALIZER_HPP
+#define DESERIALIZER_HPP
 
 #include <fstream>
 #include <unordered_map>
@@ -10,11 +10,11 @@
 
 namespace ini
 {
-    class input : public ini::section_builder
+    class deserializer : public ini::section_builder
     {
     public:
-        input(const char *filepath);
-        ~input();
+        deserializer(const char *filepath);
+        ~deserializer();
 
         const std::string &readstr(const std::string &key) const;
         float readf32(const std::string &key) const;

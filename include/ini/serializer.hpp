@@ -1,5 +1,5 @@
-#ifndef OUTPUT_HPP
-#define OUTPUT_HPP
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
 
 #include <fstream>
 #include <iomanip>
@@ -9,11 +9,11 @@
 
 namespace ini
 {
-    class output : public section_builder
+    class serializer : public section_builder
     {
     public:
-        output(const char *filepath);
-        ~output();
+        serializer(const char *filepath);
+        ~serializer();
 
         void begin_section(const std::string &section) override;
 

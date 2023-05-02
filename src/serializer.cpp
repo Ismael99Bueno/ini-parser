@@ -1,17 +1,17 @@
 #include "ini/pch.hpp"
-#include "ini/output.hpp"
+#include "ini/serializer.hpp"
 
 namespace ini
 {
-    output::output(const char *filepath) : m_stream(filepath)
+    serializer::serializer(const char *filepath) : m_stream(filepath)
     {
         DBG_ASSERT(m_stream.is_open(), "Failed to open file at %s\n", filepath)
         m_current_section.reserve(256);
     }
 
-    output::~output() { close(); }
+    serializer::~serializer() { close(); }
 
-    void output::begin_section(const std::string &section)
+    void serializer::begin_section(const std::string &section)
     {
         section_builder::begin_section(section);
         static bool first_time = true;
@@ -25,13 +25,13 @@ namespace ini
         m_reiterate_last_section = false;
     }
 
-    void output::end_section()
+    void serializer::end_section()
     {
         section_builder::end_section();
         m_reiterate_last_section = !m_current_section.empty();
     }
 
-    void output::close()
+    void serializer::close()
     {
         DBG_ASSERT(m_current_section.empty(), "A section is still open!")
         m_stream.close();

@@ -1,6 +1,6 @@
 # ini-parser
 
-ini-parser is a simple C++ library that enables users to read and write INI files, allowing the creation of objects that can easily preserve their state between executions by reading and writing data to and from INI files. To achieve this, the object intended for saving its data to an INI file must inherit from the `saveable` class (found in [saveable.hpp](https://github.com/ismawno/ini-parser/include/ini/saveable.hpp)) and override the `read()` and `write()` methods. The library provides easy-to-use functions for creating new sections and managing entries within those sections.
+ini-parser is a simple C++ library that enables users to read and write INI files, allowing the creation of objects that can easily preserve their state between executions by reading and writing data to and from INI files. To achieve this, the object intended for saving its data to an INI file must inherit from the `saveable` class (found in [serializable.hpp](https://github.com/ismawno/ini-parser/include/ini/serializable.hpp)) and override the `read()` and `write()` methods. The library provides easy-to-use functions for creating new sections and managing entries within those sections.
 
 ## Features
 
@@ -24,7 +24,7 @@ The [fetch_dependencies.py](https://github.com/ismawno/ini-parser/scripts/fetch_
 4. Create an entry point project with a `premake5` file, where the `main.cpp` will be located. Link all libraries and specify the kind of the executable as `ConsoleApp`. Don't forget to specify the different configurations for the project.
 5. Create a `premake5` file at the root of the repository describing the `premake` workspace and including all dependency projects.
 6. Build the entire project by running the `make` command in your terminal. You can specify the configuration by using `make config=the_configuration`.
-7. To use ini-parser, include the [saveable.hpp](https://github.com/ismawno/ini-parser/include/ini/saveable.hpp) header. Implement your custom objects by inheriting from the `saveable` class and overriding the `read()` and `write()` methods.
+7. To use ini-parser, include the [serializable.hpp](https://github.com/ismawno/ini-parser/include/ini/serializable.hpp) header. Implement your custom objects by inheriting from the `saveable` class and overriding the `read()` and `write()` methods.
 
 For more information on how to use ini-parser, please refer to the documentation.
 
